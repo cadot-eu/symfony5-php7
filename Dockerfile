@@ -87,7 +87,7 @@ RUN cat /php.ini>>${PHP_INI_DIR}/php.ini
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-RUN curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
 RUN apt-get install -y nodejs nano
 RUN npm install -g yarn
 
