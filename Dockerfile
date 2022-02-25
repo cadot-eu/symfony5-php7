@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:8.1.3-apache
 
 RUN a2enmod rewrite
 
@@ -88,7 +88,7 @@ RUN cat /php.ini>>${PHP_INI_DIR}/php.ini
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 RUN curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
-RUN apt-get install -y nodejs nano
+RUN apt-get install -y nodejs nano pandoc
 RUN npm install -g yarn
 
 COPY apache.conf /etc/apache2/sites-enabled/000-default.conf
